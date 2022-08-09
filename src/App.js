@@ -23,8 +23,8 @@ class App extends Component {
 	getCityInfo = async(e) => {
 	e.preventDefault();
 	try {
-
-		const cityData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=pk.de6e78a35f320e238e6614447acfb597&q=${e.target.userCityInput.value}&format= json`)
+console.log(process.env.REACT_APP_KEY)
+		const cityData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_KEY}&q=${e.target.userCityInput.value}&format= json`)
 		console.log(cityData.data)
 		this.setState({
 			userInput : e.target.userCityInput.value,
@@ -51,7 +51,7 @@ catch (error){
 	render(){
 		return (
    		 <div className="App">
-			<h1>Explore City Here </h1>
+			<h1>{process.env.REACT_APP_TITLE} </h1>
 			{this.state.displayError && 
 
 			<>
