@@ -78,7 +78,7 @@ catch (error){
       				</Button>
    			 </Form>
 			 <Card style={{width:'50%' , margin:'auto' , marginTop:'5vh' }}>
-        		<Card.Img variant="top" style={{ height:"400px" , margin:'auto'}} src={`https://maps.locationiq.com/v3/staticmap?key=pk.de6e78a35f320e238e6614447acfb597&center=${this.state.latitude},${this.state.longitude}&zoom=15`} />
+        		<Card.Img variant="top" style={{ height:"400px" , margin:'auto'}} src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_KEY}&center=${this.state.latitude},${this.state.longitude}&zoom=15`} />
         			<Card.Body>
           				<Card.Text>
 			<li>City Name : {this.state.display_name }</li>
