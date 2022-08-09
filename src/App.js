@@ -23,7 +23,6 @@ class App extends Component {
 	getCityInfo = async(e) => {
 	e.preventDefault();
 	try {
-console.log(process.env.REACT_APP_KEY)
 		const cityData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_KEY}&q=${e.target.userCityInput.value}&format= json`)
 		console.log(cityData.data)
 		this.setState({
